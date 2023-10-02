@@ -1,22 +1,10 @@
 //Надо заметить что массив отсортирован, а это значит что дубликаты будут стоять рядом друг с другом.
 const solution = (nums) => {
-    // const obj = {}
-    // let i = 0
-    //
-    // while (i < nums.length) {
-    //     if (obj[nums[i]]) {
-    //         nums.splice(i, 1)
-    //     } else {
-    //         obj[nums[i]] = 1
-    //         i++
-    //     }
-    //     console.log(nums)
-    // }
-
-    let i = 0;
+    let i = 0; //unique num counter (allow 2 occurrence)
 
     for (let j = 1; j < nums.length; j++) {
-        if (nums[i] !== nums[j]) {
+        let isSecondOccurrence = nums[i] === nums[j] && nums[i] !== nums[i - 1]
+        if (nums[i] !== nums[j] || isSecondOccurrence) {
             i++;
             nums[i] = nums[j];
         }
@@ -26,4 +14,4 @@ const solution = (nums) => {
     console.log(nums, nums.length)
 
 };
-solution([1, 1, 1, 2])
+solution([1, 1, 1, 2, 2, 2, 3, 3, 3, 4,5,6,7,7,7,8])
