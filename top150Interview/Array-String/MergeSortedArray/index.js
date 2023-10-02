@@ -1,3 +1,4 @@
+//Использование поинтеров и цикла while
 const solution = (nums1, m, nums2, n) => {
     let i = m - 1
     let j = n - 1
